@@ -9,7 +9,7 @@ import "./ERC20 TOKEN.sol";
 
 /******************************************/
 
-contract MyAdvancedToken is owned, TokenERC20 {
+contract MyAdvancedToken is owned, ERC20 {
     uint256 public sellPrice;//卖出的汇率,一个代币，可以卖出多少个以太币，单位是wei
     uint256 public buyPrice;//买入的汇率,买一个代币需要花多少以太币
 

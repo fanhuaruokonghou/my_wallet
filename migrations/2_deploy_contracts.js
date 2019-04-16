@@ -1,5 +1,5 @@
-var TokenERC20 = artifacts.require("./TokenERC20.sol");
+var MyAdvancedToken = artifacts.require("./MyAdvancedToken.sol.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(TokenERC20);
+  deployer.deploy(MyAdvancedToken);
 };
