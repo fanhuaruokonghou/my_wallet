@@ -21,7 +21,7 @@ contract MyAdvancedToken is owned, ERC20 {
     event FrozenFunds(address target, bool frozen);//定义一个事件，当有资产被冻结的时候，通知正在监听事件的客户端
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    constructor () TokenERC20(initialSupply, tokenName, tokenSymbol) payable public {}
+    constructor () ERC20(initialSupply, tokenName, tokenSymbol) payable public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {
