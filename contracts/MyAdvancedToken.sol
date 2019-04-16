@@ -12,18 +12,16 @@ import "./ERC20.sol";
 contract MyAdvancedToken is owned, ERC20 {
     uint256 public sellPrice;//卖出的汇率,一个代币，可以卖出多少个以太币，单位是wei
     uint256 public buyPrice;//买入的汇率,买一个代币需要花多少以太币
-
+    uint256 public initialSupply = 10000000;
+    string public tokenName = "HT";
+    string public tokenSymbol = "XY";
     mapping (address => bool) public frozenAccount;//是否冻结帐户的列表
     
     /* This generates a public event on the blockchain that will notify clients */
     event FrozenFunds(address target, bool frozen);//定义一个事件，当有资产被冻结的时候，通知正在监听事件的客户端
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    constructor (
-        uint256 initialSupply,
-        string memory tokenName,
-        string memory tokenSymbol
-    ) TokenERC20(initialSupply, tokenName, tokenSymbol) payable public {}
+    constructor () TokenERC20(initialSupply, tokenName, tokenSymbol) payable public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {
