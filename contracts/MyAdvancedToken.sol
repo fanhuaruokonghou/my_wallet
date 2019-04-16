@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./owned.sol";
-import "./ERC20 TOKEN.sol";
+import "./ERC20.sol";
 
 /******************************************/
 

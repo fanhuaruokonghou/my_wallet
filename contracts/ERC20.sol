@@ -4,7 +4,7 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 import "./owned.sol";
 
-contract TokenERC20 is owned {
+contract ERC20 is owned {
     string public name;
     string public symbol;
     uint8 public decimals = 18;  // decimals 可以有的小数点个数，最小的代币单位。18 是建议的默认值
