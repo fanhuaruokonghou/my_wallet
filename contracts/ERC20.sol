@@ -7,79 +7,79 @@ import "./owned.sol";
 contract TokenERC20 is owned {
     string public name;
     string public symbol;
-    uint8 public decimals = 18;  // decimals ¿ÉÒÔÓĞµÄĞ¡Êıµã¸öÊı£¬×îĞ¡µÄ´ú±Òµ¥Î»¡£18 ÊÇ½¨ÒéµÄÄ¬ÈÏÖµ
+    uint8 public decimals = 18;  // decimals å¯ä»¥æœ‰çš„å°æ•°ç‚¹ä¸ªæ•°ï¼Œæœ€å°çš„ä»£å¸å•ä½ã€‚18 æ˜¯å»ºè®®çš„é»˜è®¤å€¼
     uint256 public _totalSupply;
-    // ÓÃmapping±£´æÃ¿¸öµØÖ·¶ÔÓ¦µÄÓà¶î
+    // ç”¨mappingä¿å­˜æ¯ä¸ªåœ°å€å¯¹åº”çš„ä½™é¢
     mapping (address => uint256) public _balances;
-    // ´æ´¢¶ÔÕËºÅµÄ¿ØÖÆ
+    // å­˜å‚¨å¯¹è´¦å·çš„æ§åˆ¶
     // mapping (address => mapping (address => uint256)) public allowance;
     mapping (address => mapping (address => uint256)) private _allowed;
-    // ÊÂ¼ş£¬ÓÃÀ´Í¨Öª¿Í»§¶Ë½»Ò×·¢Éú
+    // äº‹ä»¶ï¼Œç”¨æ¥é€šçŸ¥å®¢æˆ·ç«¯äº¤æ˜“å‘ç”Ÿ
     event Transfer(address indexed from, address indexed to, uint256 value);
-    // ÊÂ¼ş£¬ÓÃÀ´Í¨Öª¿Í»§¶Ë´ú±Ò±»Ïû·Ñ
+    // äº‹ä»¶ï¼Œç”¨æ¥é€šçŸ¥å®¢æˆ·ç«¯ä»£å¸è¢«æ¶ˆè´¹
     event Burn(address indexed from, uint256 value);
     /**
-     * ³õÊ¼»¯¹¹Ôì
+     * åˆå§‹åŒ–æ„é€ 
      */
     constructor(uint256 initialSupply, string memory tokenName, string memory tokenSymbol) public {
-        _totalSupply = initialSupply * 10 ** uint256(decimals);  // ¹©Ó¦µÄ·İ¶î£¬·İ¶î¸ú×îĞ¡µÄ´ú±Òµ¥Î»ÓĞ¹Ø£¬·İ¶î = ±ÒÊı * 10 ** decimals¡£
-        _balances[msg.sender] = _totalSupply;                // ´´½¨ÕßÓµÓĞËùÓĞµÄ´ú±Ò
-        name = tokenName;                                   // ´ú±ÒÃû³Æ
-        symbol = tokenSymbol;                               // ´ú±Ò·ûºÅ
+        _totalSupply = initialSupply * 10 ** uint256(decimals);  // ä¾›åº”çš„ä»½é¢ï¼Œä»½é¢è·Ÿæœ€å°çš„ä»£å¸å•ä½æœ‰å…³ï¼Œä»½é¢ = å¸æ•° * 10 ** decimalsã€‚
+        _balances[msg.sender] = _totalSupply;                // åˆ›å»ºè€…æ‹¥æœ‰æ‰€æœ‰çš„ä»£å¸
+        name = tokenName;                                   // ä»£å¸åç§°
+        symbol = tokenSymbol;                               // ä»£å¸ç¬¦å·
     }
     
-    //·¢ĞĞ´ú±Ò×ÜÁ¿
+    //å‘è¡Œä»£å¸æ€»é‡
     function totalSupply() external view returns (uint256) {
         return _totalSupply;
     }
 
-    //²éÑ¯ÕË»§´ú±ÒÓà¶î
+    //æŸ¥è¯¢è´¦æˆ·ä»£å¸ä½™é¢
     function balanceOf(address who) external view returns (uint256) {
         return _balances[who];
     }
     
-    //²é¿´ÕËºÅ¼°ÔÊĞíÆä¿É»¨·ÑµÄ´ú±ÒÊı
+    //æŸ¥çœ‹è´¦å·åŠå…è®¸å…¶å¯èŠ±è´¹çš„ä»£å¸æ•°
     function allowance(address owner, address spender) external view returns (uint256) {
         return _allowed[owner][spender];
     }
     
     /**
-     * ´ú±Ò½»Ò××ªÒÆµÄÄÚ²¿ÊµÏÖ
+     * ä»£å¸äº¤æ˜“è½¬ç§»çš„å†…éƒ¨å®ç°
      */
     function _transfer(address _from, address _to, uint _value) internal {
-        // È·±£Ä¿±êµØÖ·²»Îª0x0£¬ÒòÎª0x0µØÖ·´ú±íÏú»Ù
+        // ç¡®ä¿ç›®æ ‡åœ°å€ä¸ä¸º0x0ï¼Œå› ä¸º0x0åœ°å€ä»£è¡¨é”€æ¯
         require(_to != address(0));
-        // ¼ì²é·¢ËÍÕßÓà¶î
+        // æ£€æŸ¥å‘é€è€…ä½™é¢
         require(_balances[_from] >= _value);
-        // È·±£×ªÒÆÎªÕıÊı¸ö
+        // ç¡®ä¿è½¬ç§»ä¸ºæ­£æ•°ä¸ª
         require(_balances[_to] + _value > _balances[_to]);
-        // ÒÔÏÂÓÃÀ´¼ì²é½»Ò×£¬
+        // ä»¥ä¸‹ç”¨æ¥æ£€æŸ¥äº¤æ˜“ï¼Œ
         uint previousBalances = _balances[_from] + _balances[_to];
         // Subtract from the sender
         _balances[_from] -= _value;
         // Add the same to the recipient
         _balances[_to] += _value;
         emit Transfer(_from, _to, _value);
-        // ÓÃassertÀ´¼ì²é´úÂëÂß¼­¡£
+        // ç”¨assertæ¥æ£€æŸ¥ä»£ç é€»è¾‘ã€‚
         assert(_balances[_from] + _balances[_to] == previousBalances);
     }
 
     /**
-     *  ´ú±Ò½»Ò××ªÒÆ
-     * ´Ó´´½¨½»Ò×ÕßÕËºÅ·¢ËÍ`_value`¸ö´ú±Òµ½ `_to`ÕËºÅ
+     *  ä»£å¸äº¤æ˜“è½¬ç§»
+     * ä»åˆ›å»ºäº¤æ˜“è€…è´¦å·å‘é€`_value`ä¸ªä»£å¸åˆ° `_to`è´¦å·
      *
-     * @param _to ½ÓÊÕÕßµØÖ·
-     * @param _value ×ªÒÆÊı¶î
+     * @param _to æ¥æ”¶è€…åœ°å€
+     * @param _value è½¬ç§»æ•°é¢
      */
     function transfer(address  _to, uint256 _value) external returns (bool) {
         _transfer(msg.sender, _to, _value);
     }
 
     /**
-     * ÕËºÅÖ®¼ä´ú±Ò½»Ò××ªÒÆ
-     * @param _from ·¢ËÍÕßµØÖ·
-     * @param _to ½ÓÊÕÕßµØÖ·
-     * @param _value ×ªÒÆÊı¶î
+     * è´¦å·ä¹‹é—´ä»£å¸äº¤æ˜“è½¬ç§»
+     * @param _from å‘é€è€…åœ°å€
+     * @param _to æ¥æ”¶è€…åœ°å€
+     * @param _value è½¬ç§»æ•°é¢
      */
     function transferFrom(address payable _from, address payable _to, uint256 _value) onlyOwner external returns (bool) {
         require(_value <= _allowed[owner][_from]);     // Check allowance
@@ -90,9 +90,9 @@ contract TokenERC20 is owned {
     }
 
     /**
-     * ÉèÖÃÄ³¸öµØÖ·£¨ºÏÔ¼£©¿ÉÒÔ½»Ò×ÕßÃûÒå»¨·ÑµÄ´ú±ÒÊı¡£
+     * è®¾ç½®æŸä¸ªåœ°å€ï¼ˆåˆçº¦ï¼‰å¯ä»¥äº¤æ˜“è€…åä¹‰èŠ±è´¹çš„ä»£å¸æ•°ã€‚
      *
-     * ÔÊĞí·¢ËÍÕß`_spender` »¨·Ñ²»¶àÓÚ `_value` ¸ö´ú±Ò
+     * å…è®¸å‘é€è€…`_spender` èŠ±è´¹ä¸å¤šäº `_value` ä¸ªä»£å¸
      *
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
@@ -106,7 +106,7 @@ contract TokenERC20 is owned {
 
 
     /**
-     * Ïú»Ù´´½¨ÕßÕË»§ÖĞÖ¸¶¨¸ö´ú±Ò
+     * é”€æ¯åˆ›å»ºè€…è´¦æˆ·ä¸­æŒ‡å®šä¸ªä»£å¸
      */
     function burn(uint256 _value) onlyOwner public returns (bool success) {
         require(_balances[msg.sender] >= _value);   // Check if the sender has enough
@@ -117,7 +117,7 @@ contract TokenERC20 is owned {
     }
 
     /**
-     * Ïú»ÙÓÃ»§ÕË»§ÖĞÖ¸¶¨¸ö´ú±Ò
+     * é”€æ¯ç”¨æˆ·è´¦æˆ·ä¸­æŒ‡å®šä¸ªä»£å¸
      *
      * Remove `_value` tokens from the system irreversibly on behalf of `_from`.
      *

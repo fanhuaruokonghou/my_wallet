@@ -2,7 +2,7 @@ pragma solidity ^0.5.0;
 
 contract owned {
     address public owner;
-//³õÊ¼»¯¹¹Ôì
+//åˆå§‹åŒ–æ„é€ 
     constructor() public {
         owner = msg.sender;
     }
@@ -11,7 +11,7 @@ contract owned {
         require(msg.sender == owner);
         _;
     }
-//ÊµÏÖËùÓĞÈ¨µÄ×ªÒÆ
+//å®ç°æ‰€æœ‰æƒçš„è½¬ç§»
     function transferOwnership(address newOwner) onlyOwner public {
         owner = newOwner;
     }
