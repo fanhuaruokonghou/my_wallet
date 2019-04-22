@@ -3,13 +3,25 @@ function showError(error) {
 }
 
 function showAccout () {
+    $('#screen-login').hide();
     $('#screen-account').show();
     $('#screen-loading').hide();
     $('#screen-wallet').hide();
+    $('#screen-create').hide();
+}
+
+function showLogin(){
+    $('#screen-account').hide();
+    $('#screen-loading').hide();
+    $('#screen-wallet').hide();
+    $('#screen-login').show();
+    $('#screen-create').hide();
 }
 
  function showLoading(title) {
+    $('#screen-login').hide();
     $('#screen-account').hide();
+    $('#screen-create').hide();
     $('#screen-loading').show();
     $('#screen-wallet').hide();
 
@@ -21,7 +33,16 @@ function showAccout () {
     );
 }
 
+function showCreate() {
+    $('#screen-login').hide();
+    $('#screen-account').hide();
+    $('#screen-loading').hide();
+    $('#screen-wallet').hide();
+    $('#screen-create').show();
+}
+
 function showWallet() {
+  $('#screen-login').hide();
   $('#screen-account').hide();
   $('#screen-loading').hide();
   $('#screen-wallet').show();

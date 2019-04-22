@@ -10,8 +10,8 @@ import "./ERC20.sol";
 /******************************************/
 
 contract MyAdvancedToken is owned, ERC20 {
-    uint256 public sellPrice;//卖出的汇率,一个代币，可以卖出多少个以太币，单位是wei
-    uint256 public buyPrice;//买入的汇率,买一个代币需要花多少以太币
+    uint256 public sellPrice = 1;//卖出的汇率,一个代币，可以卖出多少个以太币，单位是wei
+    uint256 public buyPrice = 1;//买入的汇率,买一个代币需要花多少以太币
     uint256 public initialSupply = 10000000;
     string public tokenName = "HT";
     string public tokenSymbol = "XY";
@@ -23,6 +23,8 @@ contract MyAdvancedToken is owned, ERC20 {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     constructor () ERC20(initialSupply, tokenName, tokenSymbol) payable public {}
 
+    function () payable external{}
+
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {
         require (_to != address(0));                               // Prevent transfer to 0x0 address. Use burn() instead
@@ -31,7 +33,7 @@ contract MyAdvancedToken is owned, ERC20 {
         require(!frozenAccount[_from]);                     // Check if sender is frozen
         require(!frozenAccount[_to]);                       // Check if recipient is frozen
         _balances[_from] -= _value;                         // Subtract from the sender
-        _balances[_to] += _value;                           // Add the same to the recipient
+        _balances[_to] += _value;                           // Add .the same to the recipient
         emit Transfer(_from, _to, _value); //通知任何监听该交易的客户端
     }
     

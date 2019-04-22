@@ -4,7 +4,23 @@
         <link rel="stylesheet" type="text/css" href="./style.css">
     </head>
     <body>
-        <div class="centerer" id="screen-account">
+        <div class="centerer" id="screen-login">
+            <div class="centered">
+                <h1>以太坊钱包创建或导入</h1>
+                <hr />
+                <table>
+                    <tr>
+                        <th>导入:</th>
+                        <td><div id="login" class="submit" >导入</div></td>
+                    </tr>
+                    <tr>
+                        <th>创建:</th>
+                        <td><div id="create" class="submit">新建</div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="centerer hidden" id="screen-account">
             <div class="centered">
                 <h1>以太坊钱包 - 账号创建、导入</h1>
                 <hr />
@@ -76,7 +92,7 @@
                     <tr>
                         <th>进度:</th>
                         <td>
-                            <input type="text" readonly="readonly" class="readonly" id="loading-status" value="" /></div>
+                            <input type="text" readonly="readonly" class="readonly" id="loading-status" value="" />
                         </td>
                     </tr>
                     <tr>
@@ -103,31 +119,31 @@
                     <tr>
                         <th>地址:</th>
                         <td>
-                            <input type="text" readonly="readonly" class="readonly" id="wallet-address" value="" /></div>
+                            <input type="text" readonly="readonly" class="readonly" id="wallet-address" value="" />
                         </td>
                     </tr>
                     <tr>
                         <th>余额:</th>
                         <td>
-                            <input type="text" readonly="readonly" class="readonly" id="wallet-balance" value="0.0" /></div>
+                            <input type="text" readonly="readonly" class="readonly" id="wallet-balance" value="0.0" />
                         </td>
                     </tr>
                     <tr>
                       <th>TT Token:</th>
                       <td>
-                          <input type="text" readonly="readonly" class="readonly" id="wallet-token-balance" value="0.0" /></div>
+                          <input type="text" readonly="readonly" class="readonly" id="wallet-token-balance" value="0.0" />
                       </td>
                     </tr>
                     <tr>
                         <th>Nonce:</th>
                         <td>
-                            <input type="text" readonly="readonly" class="readonly" id="wallet-transaction-count" value="0" /></div>
+                            <input type="text" readonly="readonly" class="readonly" id="wallet-transaction-count" value="0" />
                         </td>
                     </tr>
                     <tr>
                         <td> </td>
                         <td>
-                            <div id="wallet-submit-refresh" class="submit">刷新</div>
+                            <div id="wallet-submit-refresh" class="submit" >刷新</div>
                         </td>
                     </tr>
                 </table>
@@ -171,12 +187,42 @@
                 <table>
                     <tr>
                         <th>金额:</th>
+                        <td><input type="text" placeholder="(addr)" id="address" /></td>
+                    </tr>
+                    <tr>
+                        <th>金额:</th>
                         <td><input type="text" placeholder="(amount)" id="balanceToken" /></td>
                     </tr>
                     <tr>
                         <td> </td>
                         <td>
-                            <div id="wallet-token-submit-refresh" class="submit disable">发送</div>
+                            <div id="wallet-token-submit-refresh" class="submit" onclick="App.showBalanceOf()">显示</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>代币充值：</h3>
+                <table>
+                        <th>金额:</th>
+                        <td><input type="text" placeholder="充值金额(ether)" id="Recharge" /></td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td>
+                            <div id="wallet-Recharge" class="submit" onclick="App.recharge()">显示</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>代币提现：</h3>
+                <table>
+                    <th>金额:</th>
+                    <td><input type="text" placeholder="充值金额(ether)" id="withdraw" /></td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td>
+                            <div id="wallet-withdraw" class="submit" onclick="App.withdraw()">显示</div>
                         </td>
                     </tr>
                 </table>
@@ -207,7 +253,30 @@
                 </p>
             </div>
         </div>
-
+        <div class="centerer hidden" id="screen-create">
+            <div class="centered">
+                <h1>创建钱包</h1>
+                <hr />
+                <table>
+                    <tr>
+                        <th>HD钱包密码:</th>
+                        <td><input type="password" placeholder="(password)" id="HD-wallet-password" /></td>
+                    </tr>
+                    <tr>
+                        <th>HD钱包:</th>
+                        <td><div id="mnemonic" class="submit disable" >创建HD钱包</div></td>
+                    </tr>
+                    <tr>
+                        <th>HD钱包密码:</th>
+                        <td><input type="password" placeholder="(password)" id="private-wallet-password" /></td>
+                    </tr>
+                    <tr>
+                        <th>私钥钱包:</th>
+                        <td><div id="private-key" class="submit disable">创建普通私钥钱包</div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <script type="text/javascript" src="ethers-v4.min.js"></script>
         <script type="text/javascript" src="jquery.min.js"></script>
         <script type="text/javascript" src="page.js"></script>
