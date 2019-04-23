@@ -5,7 +5,6 @@ App = {
     contract: null,
 
     setupWallet: function (wallet) {  //初始化钱包
-        showWallet();
 
         //建立一个provider对象
         App.provider = new ethers.providers.JsonRpcProvider("http://45.102.203.221:8545");
