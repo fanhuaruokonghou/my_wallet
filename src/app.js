@@ -20,13 +20,15 @@ App = {
     },
 
     //通过keystore文件导入密钥
+    //privateName  私钥钱包名字
     //json  keystore文件的json字符串
     //password  用户用于解密keystore文件的密钥
-    initLoadJson: function(json, password) {
+    initLoadJson: function(privateName, json, password) {
+        let storage = window.localStorage;
         if (ethers.utils.getJsonWalletAddress(json)) {
-            App.cancelScrypt = false;
             ethers.Wallet.fromEncryptedJson(json, password).then(function(wallet) {
                 App.setupWallet(wallet);
+                storage.setItem(privateName, json);
             }, function(error) {
                 if (error.message === 'invalid password') {
                     alert('Wrong Password');
@@ -40,16 +42,17 @@ App = {
         }
     },
 
-    initLoadKey: function(privateKey) {  //导入私钥
-        submit.click(function() {  //绑定事件到id为select-submit-privatekey的按钮上
-            if (submit.hasClass('disable')) { return; }
-            if (privateKey.substring(0, 2) !== '0x') { privateKey = '0x' + privateKey; }
-            // 创建对应的钱包
-            App.setupWallet(new ethers.Wallet(privateKey));
-        });
+    //导入私钥
+    //privateKey  私钥  64位的16进制字符，即256bit
+    initLoadKey: function(privateKey) {
+        if (privateKey.substring(0, 2) !== '0x') { privateKey = '0x' + privateKey; }
+        // 创建对应的钱包
+        App.setupWallet(new ethers.Wallet(privateKey));
     },
 
-    checkMnemonic: function(mnemonic){  //判断输入的是否是助记词
+    //判断输入的是否是助记词
+    //mnemonic  助记词
+    checkMnemonic: function(mnemonic){
         if(ethers.utils.HDNode.isValidMnemonic(mnemonic)){
             return true;
         }else{
@@ -57,40 +60,62 @@ App = {
         }
     },
 
-    initMnemonic: function(mnemonic, path) {  //导入助记词
-        if(App.checkMnemonic(mnemonic)){
-            App.setupWallet(ethers.Wallet.fromMnemonic(inputPhrase.val(), inputPath.val()));
-        }else {
-            console.log("助记词错误！")
+    //通过助记词导入钱包
+    //mnemonic  助记词12-24个单词
+    //HDName  钱包名字
+    initMnemonic: function(HDName, mnemonic, password) {
+        let privateKey = null;
+        let wallet = null;
+        let path = "m/44'/60'/0'/0/0";
+        let storage = window.localStorage;
+        if(password === ''){
+            wallet = new ethers.Wallet.fromMnemonic(mnemonic, path);
+        }else{
+            let bip39 = require('bip39');
+            let bip32 = require('bip32');
+            let seed= bip39.mnemonicToSeedSync(mnemonic, password);
+            let key = bip32.fromSeed(seed);
+            privateKey = key.derivePath(path).privateKey.toString('hex');
+            wallet = new ethers.Wallet(privateKey);
         }
+        App.createWallet(wallet);
+        storage.setItem(HDName, mnemonic);
     },
 
-    exportKeystore: function(password) {  //导出私钥为json格式
-        App.activeWallet.encrypt(password, App.updateLoading).then(function(json) {
+    //导出私钥为json格式
+    //password  私钥的加密密钥设置
+    exportKeystore: function(privateName, password) {
+        App.activeWallet.encrypt(password).then(function(json) {
             let blob = new Blob([json], {type: "text/plain;charset=utf-8"});
-            saveAs(blob, "keystore.json");
+            let storage = window.localStorage;
+            storage.setItem(privateName, blob.toString());
     });
     },
 
-    creatHDwallet: function(HDName, password, path){  //创建HD钱包
-        let bip39 = require('bip39');
-        let bip32 = require('bip32');
+    //创建HD钱包
+    //HDName 钱包名字
+    // password  HD钱包的密钥
+    creatHDwallet: function(HDName, password){
         let mnemonic = ethers.utils.HDNode.entropyToMnemonic(ethers.utils.randomBytes(32));
-        let seed= bip39.mnemonicToSeedSync(mnemonic, password);
-        let key = bip32.fromSeed(seed);
-        let privateKey = key.derivePath(path).privateKey.toString('hex');
-        let wallet = new ethers.Wallet(privateKey)
+        let privateKey = null;
+        let wallet = null;
+        let path = "m/44'/60'/0'/0/0";
+        let storage = window.localStorage;
+        if(password === ''){
+            wallet = new ethers.Wallet.fromMnemonic(mnemonic, path);
+        }else{
+            let bip39 = require('bip39');
+            let bip32 = require('bip32');
+            let seed= bip39.mnemonicToSeedSync(mnemonic, password);
+            let key = bip32.fromSeed(seed);
+            privateKey = key.derivePath(path).privateKey.toString('hex');
+            wallet = new ethers.Wallet(privateKey);
+        }
         App.createWallet(wallet);
-        //存入？？？？
-
-
-
-
-        console.log("bip:" + privateKey);
-        console.log("addr:" + wallet.address);
-        console.log("seed:" + seed.toString('hex'));
-        console.log("mnemonic:" + mnemonic);
+        storage.setItem(HDName, mnemonic);
     },
+
+
 
     createPrivWallet: function(PrivName, password){  //创建公私钥对钱包
         let randomNumber = ethers.utils.bigNumberify(ethers.utils.randomBytes(32));
@@ -115,7 +140,8 @@ App = {
         App.activeWallet.getBalance('pending').then(function(balance) {
             ethBalance = ethers.utils.formatEther(balance, { commify: true });  //以太余额
         }, function(error) {
-            showError(error);
+            alert('Error \u2014 ' + error.message);
+            return;
         });
 
         App.contract.balanceOf(App.activeWallet.address).then(function(balance){
@@ -125,21 +151,25 @@ App = {
         App.activeWallet.getTransactionCount('pending').then(function(transactionCount) {
             nonce = transactionCount;  //账户交易序号nonce
         }, function(error) {
-            showError(error);
+            alert('Error \u2014 ' + error.message);
+            return;
         });
+        let balance = '{"ethBalance": ' + ethBalance + ', "tokenBalance": ' + tokenBalance +', "nonce": ' + nonce + '}';
+        return balance;
     },
 
     initToken: function() {  //初始化代币合约
-        // $.getJSON('MyAdvancedToken.json', function(data) {
-        // 智能合约地址
-        const address = data.networks["5777"].address;
-        console.log(address);
+        $.getJSON('MyAdvancedToken.json', function(data) {
+            // 智能合约地址
+            const address = data.networks["5777"].address;
+            console.log(address);
 
-        // 初始化智能合约对象
-        App.contract = new ethers.Contract(address, data.abi, App.provider);
-        console.log(App.contract);
-        console.log("contract:" + App.contract);
-        App.refreshUI();
+            // 初始化智能合约对象
+            App.contract = new ethers.Contract(address, data.abi, App.provider);
+            console.log(App.contract);
+            console.log("contract:" + App.contract);
+            return App.refreshUI();
+        });
     },
 
     //查询代币余额
@@ -174,11 +204,12 @@ App = {
             }).then(function(tx) {
                 console.log(tx);
                 alert('Success!');
-                App.refreshUI();
+                return App.refreshUI();
             }, function(error) {
                 console.log(error);
-                showError(error);
+                alert('Error \u2014 ' + error.message);
             });
+            return App.refreshUI();
         }else {
             console.log("地址或金额错误！")
         }
@@ -204,11 +235,12 @@ App = {
             }).then(function(tx) {
                 console.log(tx);
                 alert('Success!');
-                App.refreshUI();
+                return App.refreshUI();
             }, function(error) {
                 console.log(error);
                 alert('Error \u2014 ' + error.message);
             });
+            return App.refreshUI();
         }else {
             console.log("地址错误！！")
         }
@@ -224,7 +256,7 @@ App = {
             gasPrice: ethers.utils.parseUnits("2", "gwei"),
             value: ethers.utils.parseEther(ethAmount)
         });
-        App.refreshUI();
+        return App.refreshUI();
     },
 
     //提现
@@ -235,6 +267,6 @@ App = {
             gasLimit: 500000,
             gasPrice: ethers.utils.parseUnits("2", "gwei")
         });
-        App.refreshUI();
+        return App.refreshUI();
     }
 }
