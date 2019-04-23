@@ -161,7 +161,7 @@ App = {
     initToken: function() {  //初始化代币合约
         $.getJSON('MyAdvancedToken.json', function(data) {
             // 智能合约地址
-            const address = data.networks["5777"].address;
+            const address = data.networks["1001"].address;
             console.log(address);
 
             // 初始化智能合约对象
