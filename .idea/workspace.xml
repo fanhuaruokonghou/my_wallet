@@ -1,23 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8929146b-665a-4f68-8f03-e66078c1a057" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/w.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HDWallet.js" afterDir="false" />
+    <list default="true" id="8929146b-665a-4f68-8f03-e66078c1a057" name="Default Changelist" comment="修改前">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/ERC20.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/ERC20.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/Migrations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/MyAdvancedToken.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/MyAdvancedToken.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/TokenERC20.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/owned.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/owned.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/tokenRecipient.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/tokenRecipient.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/ERC20.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/ERC20.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/MyAdvancedToken.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/MyAdvancedToken.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Address.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/AllowanceCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Arrays.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/CappedCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/CapperRole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ConditionalEscrow.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Counters.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Crowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ECDSA.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC165.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC165Checker.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20Burnable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20Capped.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20Detailed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20Metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20Migrator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20Mintable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20Pausable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC20Snapshot.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721Burnable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721Enumerable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721Full.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721Holder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721Metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721MetadataMintable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721Mintable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ERC721Pausable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Escrow.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/FinalizableCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IERC165.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IERC20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IERC721.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IERC721Enumerable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IERC721Full.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IERC721Metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IERC721Receiver.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IncreasingPriceCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/IndividuallyCappedCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Math.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/MerkleProof.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/MintedCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/MinterRole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Ownable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Pausable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/PausableCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/PauserRole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/PaymentSplitter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/PostDeliveryCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/PullPayment.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/ReentrancyGuard.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/RefundEscrow.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/RefundableCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/RefundablePostDeliveryCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Roles.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/SafeERC20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/SafeMath.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/Secondary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/SignatureBouncer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/SignedSafeMath.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/SignerRole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/TimedCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/TokenTimelock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/TokenVesting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/WhitelistAdminRole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/WhitelistCrowdsale.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/build/contracts/WhitelistedRole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/ARCHITECTURE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/access/Roles.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/access/roles/CapperRole.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/access/roles/PauserRole.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/access/roles/SignerRole.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/access/roles/WhitelistAdminRole.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/access/roles/WhitelistedRole.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/distribution/PostDeliveryCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/distribution/RefundableCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/emission/AllowanceCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/price/IncreasingPriceCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/validation/PausableCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/crowdsale/validation/WhitelistCrowdsale.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/cryptography/ECDSA.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/cryptography/MerkleProof.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/drafts/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/drafts/Counters.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/drafts/ERC1046/ERC20Metadata.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/drafts/ERC20Migrator.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/drafts/ERC20Snapshot.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/drafts/SignatureBouncer.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/drafts/SignedSafeMath.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/drafts/TokenVesting.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/introspection/ERC165.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/introspection/ERC165Checker.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/introspection/IERC165.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/lifecycle/Pausable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/math/Math.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/ownership/Secondary.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/payment/PaymentSplitter.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/payment/PullPayment.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/payment/escrow/ConditionalEscrow.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/payment/escrow/Escrow.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/payment/escrow/RefundEscrow.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Capped.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Pausable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/SafeERC20.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/TokenTimelock.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Burnable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Enumerable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Holder.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Metadata.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721MetadataMintable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Pausable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721Enumerable.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721Full.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721Metadata.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/utils/Address.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/utils/Arrays.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/openzeppelin-solidity/test/behaviors/access/roles/PublicRole.behavior.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/truffle-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/truffle-config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,30 +165,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8982">
-              <caret line="10" column="87" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
-              <folding>
-                <element signature="e#896#1035#0" />
-                <element signature="e#1067#1845#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HDWallet.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="44" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HD.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            <state relative-caret-position="240">
+              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -64,8 +174,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/MyAdvancedToken.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+            <state relative-caret-position="263">
+              <caret line="28" column="62" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -73,8 +183,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/ERC20.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="15" column="40" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="40" />
+            <state relative-caret-position="215">
+              <caret line="74" column="21" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hdkey.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="597216">
+              <caret line="24884" column="31" selection-start-line="24884" selection-start-column="31" selection-end-line="24884" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FileSaver.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2208">
+              <caret line="92" column="12" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -91,8 +237,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6048">
-              <caret line="262" column="97" selection-start-line="262" selection-start-column="97" selection-end-line="262" selection-end-column="97" />
+            <state relative-caret-position="6528">
+              <caret line="282" column="46" selection-start-line="282" selection-start-column="46" selection-end-line="282" selection-end-column="46" />
               <folding>
                 <element signature="n#table#4;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -103,8 +249,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+            <state relative-caret-position="1080">
+              <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
               <folding>
                 <element signature="n#!!block;n#showWallet#0" />
               </folding>
@@ -123,11 +269,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>转移代币:</find>
-      <find>wallet-token-send-amount</find>
-      <find>transfer</find>
-      <find>contractWithSigner</find>
-      <find>Send</find>
       <find>non</find>
       <find>getTransactionCount</find>
       <find>val</find>
@@ -153,14 +294,26 @@
       <find>refreshToken</find>
       <find>创建钱包</find>
       <find>57771001</find>
+      <find>entropyToMnemonic</find>
+      <find>1001</find>
+      <find>saveas</find>
+      <find>pri_passwd</find>
+      <find>wallet</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
       <replace>refreshUI</replace>
+      <replace>5777</replace>
+      <replace>Pri_password</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -171,6 +324,7 @@
         <option value="$PROJECT_DIR$/src/HDWallet.js" />
         <option value="$PROJECT_DIR$/src/HD.js" />
         <option value="$PROJECT_DIR$/src/page.js" />
+        <option value="$PROJECT_DIR$/src/bip39.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app.js" />
       </list>
@@ -183,9 +337,9 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -199,6 +353,11 @@
             <path>
               <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
               <item name="my_wallet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my_wallet" type="462c0819:PsiDirectoryNode" />
+              <item name="contracts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
@@ -277,7 +436,8 @@
       <workItem from="1555637562980" duration="19231000" />
       <workItem from="1555722687328" duration="8873000" />
       <workItem from="1555810199696" duration="7295000" />
-      <workItem from="1555897565951" duration="130000" />
+      <workItem from="1555897565951" duration="25108000" />
+      <workItem from="1555983802499" duration="1725000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <created>1555380028413</created>
@@ -321,11 +481,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555393440640</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="last">
+      <created>1555897747362</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555897747362</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121268000" />
+    <option name="totallyTimeSpent" value="147971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -340,8 +507,8 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5283286" visible="true" weight="0.25099075" />
-      <window_info id="Structure" order="1" sideWeight="0.4716714" side_tool="true" visible="true" weight="0.25099075" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56540084" visible="true" weight="0.15719947" />
+      <window_info id="Structure" order="1" sideWeight="0.43459916" side_tool="true" visible="true" weight="0.15719947" />
       <window_info id="npm" order="2" sideWeight="0.68008476" side_tool="true" weight="0.15587847" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -352,9 +519,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3281471" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.16288953" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -362,6 +530,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="last" />
@@ -373,14 +567,6 @@
         <state relative-caret-position="168">
           <caret line="14631" column="4" selection-start-line="14631" selection-start-column="4" selection-end-line="14631" selection-end-column="4" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bs-config.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14688" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/migrations/1_initial_migration.js">
@@ -400,13 +586,6 @@
     <entry file="file://$PROJECT_DIR$/build/contracts/owned.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contracts/Migrations.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -424,26 +603,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ethers-v4.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret column="138158" selection-start-column="138158" selection-end-column="138158" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ControlSolidity/truffle-config.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8982">
-          <caret line="10" column="87" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
-          <folding>
-            <element signature="e#896#1035#0" />
-            <element signature="e#1067#1845#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HDWallet.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -452,24 +613,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HD.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/bip39/src/index.js" />
+    <entry file="file://$PROJECT_DIR$/bs-config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="96">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/MyAdvancedToken.sol">
+    <entry file="file://$PROJECT_DIR$/src/HD.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/bip32/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/bip32.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        <state relative-caret-position="1418">
+          <caret line="17623" column="30" lean-forward="true" selection-start-line="17623" selection-start-column="30" selection-end-line="17623" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/ERC20.sol">
+    <entry file="file://$PROJECT_DIR$/src/bip39.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="264">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/hdkey/lib/hdkey.js" />
+    <entry file="file://$PROJECT_DIR$/src/ethers-v4.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret column="152" selection-start-column="152" selection-end-column="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hdkey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597216">
+          <caret line="24884" column="31" selection-start-line="24884" selection-start-column="31" selection-end-line="24884" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2208">
+          <caret line="92" column="12" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -482,8 +682,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6048">
-          <caret line="262" column="97" selection-start-line="262" selection-start-column="97" selection-end-line="262" selection-end-column="97" />
+        <state relative-caret-position="6528">
+          <caret line="282" column="46" selection-start-line="282" selection-start-column="46" selection-end-line="282" selection-end-column="46" />
           <folding>
             <element signature="n#table#4;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" />
           </folding>
@@ -492,11 +692,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        <state relative-caret-position="1080">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
           <folding>
             <element signature="n#!!block;n#showWallet#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/MyAdvancedToken.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="28" column="62" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/ERC20.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="74" column="21" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>

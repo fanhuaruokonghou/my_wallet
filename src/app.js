@@ -4,11 +4,12 @@ App = {
     activeWallet: null,
     contract: null,
 
+
     setupWallet: function (wallet) {  //初始化钱包
         showWallet();
 
         //建立一个provider对象
-        App.provider = new ethers.providers.JsonRpcProvider("http://45.102.203.221:8545");
+        App.provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:7545");
 
         //  将钱包连接到节点
         App.activeWallet = wallet.connect(App.provider);
@@ -132,18 +133,18 @@ App = {
         showCreate();
         let submit = $('#mnemonic');  //创建HD钱包
         let submit1 = $('#private-key');  //创建私钥
-        let HD_passwd = $('#HD-wallet-password');
-        let pri_passwd = $('#private-wallet-password');
+        let HD_password = $('#HD-wallet-password');
+        let Pri_password = $('#private-wallet-password');
 
-        HD_passwd.on('input', () => {
-            if (HD_passwd.val() !== '') {
+        HD_password.on('input', () => {
+            if (HD_password.val() !== '') {
                 submit.removeClass('disable');
             } else {
                 submit.addClass('disable');
             }
         });
-        pri_passwd.on('input', () => {
-            if (pri_passwd.val() !== '') {
+        Pri_password.on('input', () => {
+            if (Pri_password.val() !== '') {
                 submit1.removeClass('disable');
             } else {
                 submit1.addClass('disable');
@@ -151,12 +152,21 @@ App = {
         });
 
         submit.click(function () {
-            if(HD_passwd.val() === ''){
+            if(HD_password.val() === ''){
                 return;
             }else{
                 submit.removeClass('disable');
             }
+            let bip39 = require('bip39');
+            let bip32 = require('bip32');
             let mnemonic = ethers.utils.HDNode.entropyToMnemonic(ethers.utils.randomBytes(32));
+            let seed= bip39.mnemonicToSeedSync(mnemonic, HD_password.val());
+            let key = bip32.fromSeed(seed);
+            let privateKey = key.derivePath("m/44'/60'/0'/0/0").privateKey.toString('hex');
+            let wallet = new ethers.Wallet(privateKey);
+            console.log("bip:" + privateKey);
+            console.log("addr:" + wallet.address);
+            console.log("seed:" + seed.toString('hex'));
             console.log("mnemonic:" + mnemonic);
         });
 
@@ -165,13 +175,13 @@ App = {
             let privateKey = randomNumber._hex;
             let storage = window.localStorage;
             if (privateKey.substring(0, 2) !== '0x') { privateKey = '0x' + privateKey; }
-            let provider = new ethers.providers.JsonRpcProvider("http://45.102.203.221:8545");
+            let provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:7545");
             let wallet = new ethers.Wallet(privateKey);
             let activeWallet = wallet.connect(provider);
 
             App.cancelScrypt = false;
 
-            activeWallet.encrypt(pri_passwd.val()).then(function(json) {
+            activeWallet.encrypt(Pri_password.val()).then(function(json) {
                 storage.setItem('a', json);
                 console.log(storage.getItem('a'));
             });
@@ -218,7 +228,7 @@ App = {
 
     $.getJSON('MyAdvancedToken.json', function(data) {
       // 智能合约地址
-      const address = data.networks["1001"].address;
+      const address = data.networks["5777"].address;
       console.log(address);
 
       // 创建智能合约对象
