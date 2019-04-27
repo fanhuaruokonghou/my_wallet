@@ -7,7 +7,14 @@
     "test": "test"
   },
   "dependencies": {
-    "lite-server": "^2.4.0"
+    "bip32": "^1.0.4",
+    "bip39": "^3.0.1",
+    "bitcoin-ts": "^1.4.0",
+    "crypto": "^1.0.1",
+    "ethers": "^4.0.27",
+    "lite-server": "^2.4.0",
+    "secp256k1": "^3.6.2",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {},
   "scripts": {
