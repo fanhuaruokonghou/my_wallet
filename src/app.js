@@ -7,7 +7,7 @@ App = {
 
     setupWallet: function (wallet) {  //初始化钱包
         //建立一个provider对象连接到以太坊的节点
-        App.provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:7545");
+        App.provider = new ethers.providers.JsonRpcProvider("http://47.102.203.221:8545");
         //  将钱包连接到节点
         App.activeWallet = wallet.connect(App.provider);
         App.initToken();  //初始化代币合约对象App.contract
@@ -78,7 +78,7 @@ App = {
             privateKey = key.derivePath(path).privateKey.toString('hex');
             wallet = new ethers.Wallet(privateKey);
         }
-        App.createWallet(wallet);
+        App.setupWallet(wallet);
         storage.setItem(HDName, mnemonic);
     },
 
@@ -135,7 +135,7 @@ App = {
             privateKey = key.derivePath(path).privateKey.toString('hex');
             wallet = new ethers.Wallet(privateKey);
         }
-        App.createWallet(wallet);
+        App.setupWallet(wallet);
     },
 
     //创建公私钥对钱包
@@ -146,7 +146,7 @@ App = {
         let privateKey = randomNumber._hex;
         let storage = window.localStorage;
         if (privateKey.substring(0, 2) !== '0x') { privateKey = '0x' + privateKey; }
-        let provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:7545");
+        let provider = new ethers.providers.JsonRpcProvider("http://47.102.203.221:8545");
         let wallet = new ethers.Wallet(privateKey);
         let activeWallet = wallet.connect(provider);
         activeWallet.encrypt(password).then(function(json) {
