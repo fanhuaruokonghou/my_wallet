@@ -288,9 +288,9 @@ App = {
 
     //代币充值
     //ethAmount  充值金额
-    recharge: function (ethAmount) {
+    recharge1: function (ethAmount) {
         let contractWithSigner = App.contract.connect(App.activeWallet);
-        contractWithSigner.buy({
+        contractWithSigner.recharge({
             gasLimit: 500000,
             // 偷懒，直接使用 2gwei
             gasPrice: ethers.utils.parseUnits("2", "gwei"),
