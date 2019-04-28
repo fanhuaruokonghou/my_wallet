@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8929146b-665a-4f68-8f03-e66078c1a057" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="412" column="30" selection-start-line="412" selection-start-column="30" selection-end-line="412" selection-end-column="30" />
+            <state relative-caret-position="384">
+              <caret line="199" column="11" lean-forward="true" selection-start-line="199" selection-start-column="11" selection-end-line="199" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -110,8 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>创建钱包</find>
-      <find>57771001</find>
       <find>entropyToMnemonic</find>
       <find>saveas</find>
       <find>pri_passwd</find>
@@ -126,7 +120,6 @@
       <find>show</find>
       <find>error</find>
       <find>showError(error);</find>
-      <find>App.refreshUI();</find>
       <find>privateName</find>
       <find>index</find>
       <find>key</find>
@@ -140,6 +133,9 @@
       <find>mnemonic</find>
       <find>bip39.mnemonicToSeedSync(mnemonic,</find>
       <find>偷懒，直接是用 2gwei</find>
+      <find>refreshUI</find>
+      <find>return App.refreshUI();</find>
+      <find>App.refreshUI();</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
@@ -153,9 +149,11 @@
       <replace>alert('Error \u2014 ' + error.message);</replace>
       <replace>return App.refreshUI();</replace>
       <replace>偷懒，直接使用 2gwei</replace>
+      <replace>App.refreshUI();</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -197,6 +195,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,7 +212,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,7 +294,8 @@
       <workItem from="1556068324304" duration="7910000" />
       <workItem from="1556160347262" duration="22100000" />
       <workItem from="1556242079995" duration="7315000" />
-      <workItem from="1556328545928" duration="5413000" />
+      <workItem from="1556328545928" duration="6647000" />
+      <workItem from="1556414936971" duration="3691000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <created>1555380028413</created>
@@ -382,11 +381,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556010407822</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="last">
+      <created>1556351122974</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556351122974</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205518000" />
+    <option name="totallyTimeSpent" value="210443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -401,8 +407,8 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.23371105" visible="true" weight="0.2351387" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.76628894" side_tool="true" visible="true" weight="0.2351387" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5339943" visible="true" weight="0.14531043" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.46600565" side_tool="true" visible="true" weight="0.14531043" />
       <window_info id="npm" order="2" sideWeight="0.68008476" side_tool="true" weight="0.15587847" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -579,8 +585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="412" column="30" selection-start-line="412" selection-start-column="30" selection-end-line="412" selection-end-column="30" />
+        <state relative-caret-position="384">
+          <caret line="199" column="11" lean-forward="true" selection-start-line="199" selection-start-column="11" selection-end-line="199" selection-end-column="11" />
         </state>
       </provider>
     </entry>

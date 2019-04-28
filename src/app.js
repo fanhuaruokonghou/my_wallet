@@ -197,9 +197,6 @@ App = {
 
         App.activeWallet.getTransactionCount('pending').then(function(transactionCount) {
             nonce = transactionCount;  //账户交易序号nonce
-        }, function(error) {
-            alert('Error \u2014 ' + error.message);
-            return;
         });
         let balance = '{"ethBalance": ' + ethBalance + ', "tokenBalance": ' + tokenBalance +', "nonce": ' + nonce + '}';
         return balance;
@@ -215,7 +212,7 @@ App = {
             App.contract = new ethers.Contract(address, data.abi, App.provider);
             console.log(App.contract);
             console.log("contract:" + App.contract);
-            return App.refreshUI();
+            App.refreshUI();
         });
     },
 
@@ -251,12 +248,12 @@ App = {
             }).then(function(tx) {
                 console.log(tx);
                 alert('Success!');
-                return App.refreshUI();
+                App.refreshUI();
             }, function(error) {
                 console.log(error);
                 alert('Error \u2014 ' + error.message);
             });
-            return App.refreshUI();
+            App.refreshUI();
         }else {
             console.log("地址或金额错误！")
         }
@@ -282,12 +279,12 @@ App = {
             }).then(function(tx) {
                 console.log(tx);
                 alert('Success!');
-                return App.refreshUI();
+                App.refreshUI();
             }, function(error) {
                 console.log(error);
                 alert('Error \u2014 ' + error.message);
             });
-            return App.refreshUI();
+            App.refreshUI();
         }else {
             console.log("地址错误！！")
         }
@@ -303,7 +300,7 @@ App = {
             gasPrice: ethers.utils.parseUnits("2", "gwei"),
             value: ethers.utils.parseEther(ethAmount)
         });
-        return App.refreshUI();
+        App.refreshUI();
     },
 
     //提现
@@ -314,7 +311,7 @@ App = {
             gasLimit: 500000,
             gasPrice: ethers.utils.parseUnits("2", "gwei")
         });
-        return App.refreshUI();
+        App.refreshUI();
     },
 
     //在注册的时候生成用于用户协商密钥的mnemonic
@@ -399,7 +396,7 @@ App = {
         }).then(function(tx) {
             console.log(tx);
             alert('Success!');
-            return App.refreshUI();
+            App.refreshUI();
         }, function(error) {
             console.log(error);
             alert('Error \u2014 ' + error.message);
