@@ -288,7 +288,7 @@ App = {
 
     //代币充值
     //ethAmount  充值金额
-    recharge1: function (ethAmount) {
+    rechargeToken: function (ethAmount) {
         let contractWithSigner = App.contract.connect(App.activeWallet);
         contractWithSigner.recharge({
             gasLimit: 500000,
