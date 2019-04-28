@@ -185,11 +185,7 @@ App = {
         let nonce = null;
         App.activeWallet.getBalance('pending').then(function(balance) {
             ethBalance = ethers.utils.formatEther(balance, { commify: true });  //以太余额
-        }, function(tx) {
-            console.log(tx);
-        }),function (error) {
-            alert('Error \u2014 ' + error.message);
-        };
+        });
 
         App.contract.balanceOf(App.activeWallet.address).then(function(balance){
             tokenBalance = balance;  //代币余额
