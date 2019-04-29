@@ -301,9 +301,9 @@ App = {
 
     //提现
     //tokenAmount 提现的代币金额
-    withdraw: function (tokenAmount) {
+    withdrawToken: function (tokenAmount) {
         let contractWithSigner = App.contract.connect(App.activeWallet);
-        contractWithSigner.sell(tokenAmount, {
+        contractWithSigner.withdraw(tokenAmount, {
             gasLimit: 500000,
             gasPrice: ethers.utils.parseUnits("2", "gwei")
         });
@@ -311,45 +311,41 @@ App = {
     },
 
     //在注册的时候生成用于用户协商密钥的mnemonic
-    createECDHNemonic: function(userName, password){
+    createECDHNemonic: function(userId, password){
         let storage = window.localStorage;
         let mnemonic = ethers.utils.HDNode.entropyToMnemonic(ethers.utils.randomBytes(32));
         let privateKey = ethers.utils.bigNumberify(ethers.utils.randomBytes(32));
         let wallet = new ethers.Wallet(privateKey);
         wallet.encrypt(password).then(function(json) {
-            storage.setItem(userName + 'priv', json);
+            storage.setItem(userId + 'priv', json);
             console.log(storage.getItem(privateName));
         });
-        storage.setItem(userName + 'ECDH', mnemonic);
+        storage.setItem(userId + 'ECDH', mnemonic);
     },
 
 
 
     //密钥协商
-    ECDH: function (userName, index, password) {
+    ECDH: function (userId, nonce, password) {
         const crypto = require('crypto');
         const alice = crypto.createECDH('secp256k1');
-        let privateKeyList = App.decryptFile(userName, index, password);
-        let publicKeyList = new Array(privateKeyList.length);
-        for (let i = 0; i < privateKeyList.length; i++) {
-            alice.setPrivateKey(privateKeyList[i], 'hex');
-            publicKeyList[i] = alice.getPublicKey('hex');
-        }
-        return publicKeyList;
+        let privateKey = App.decryptFile(userId, nonce, password);
+        alice.setPrivateKey(privateKey, 'hex');
+        let publicKey = alice.getPublicKey('hex');
+        return publicKey;
         // const alice_secret = alice.computeSecret(bob.getPublicKey(), null, 'hex');
         // const bob_secret = bob.computeSecret(alice.getPublicKey(), null, 'hex');
     },
 
     //解密用户购买的文件
-    //userName  用户的唯一名字
-    //index  该用户的交易系列数组
+    //userId  用户的唯一名字
+    //nonce  该用户的交易数
     //password  解密密钥
-    decryptFile: function (userName, index, password) {
+    decryptFile: function (userId, nonce, password) {
         let privateKey = null;
-        let privateKeyList = new  Array(index.length);
         let path = "m/44'/60'/0'/0/";
         let storage = window.localStorage;
-        let json = storage.getItem(userName + 'priv');
+        let json = storage.getItem(userId + 'priv');
         if (ethers.utils.getJsonWalletAddress(json)) {
             ethers.Wallet.fromEncryptedJson(json, password).then(function(wallet) {
                 privateKey = wallet.privateKey
@@ -368,24 +364,21 @@ App = {
         let bip32 = require('bip32');
         let seed= bip39.mnemonicToSeedSync(mnemonic, privateKey);
         let key = bip32.fromSeed(seed);
-        for (let i = 0; i < index.length; i++) {
-            privateKeyList[i] = key.derivePath(path + index[i]).publicKey.toString('hex').substr(2,64);
-        }
-
-        return privateKeyList;
+        let publicKey = key.derivePath(path + nonce).publicKey.toString('hex').substr(2,64);  //压缩格式的公钥
+        return publicKey;
     },
 
-    //购买非实时数据
+    //购买非定制数据
     //seller  卖家地址
     //fileNumberList 文件序号列表
     //买家公钥
     //交易类型  1表示拥有权 2表示所有权
     //交易代币总额
-    purchaseData: function (seller, fileNumberList, publicKeyCheck, txType, tokenAmount,) {
-
+    // purchaseData: function (seller, fileNumberList, publicKeyCheck, txType, tokenAmount) {
+    purchaseData: function (seller, buyerGrade, txType, tokenAmount) {
         let contractWithSigner = App.contract.connect(App.activeWallet);
         //  发起交易，前面2个参数是函数的参数，第3个是交易参数
-        contractWithSigner.buyData(seller, fileNumberList, publicKeyCheck, txType, tokenAmount, {
+        contractWithSigner.buyData(seller, txType, tokenAmount, buyerGrade, {
             gasLimit: 500000,
             // 偷懒，直接使用 2gwei
             gasPrice: ethers.utils.parseUnits("2", "gwei")
@@ -399,13 +392,18 @@ App = {
         });
     },
 
-    //购买实时数据
-    //publicKeyCheck  买家公钥
+    //购买定制数据
+    //password  买家输入的密钥
     //IP或者特征值
     //交易代币总额
-    purchaseRealTimeData: function (publicKeyCheck, ipOrEigenvalues, value) {
+    purchaseRealTimeData: function (userId, password, ipOrEigenvalues, value, accountsNumber, buyerGrade, duration) {
+        let nonce = null;
+        App.activeWallet.getTransactionCount('pending').then(function(transactionCount) {
+            nonce = transactionCount;  //账户交易序号nonce
+        });
+        let publicKeyCheck = App.ECDH(userId, nonce, password);
         let contractWithSigner = App.contract.connect(App.activeWallet);
-        contractWithSigner.buyRealTimeData(publicKeyCheck, ipOrEigenvalues, value, {
+        contractWithSigner.buyRealTimeData(nonce, publicKeyCheck, ipOrEigenvalues, value, accountsNumber, buyerGrade, duration, userId, {
             gasLimit: 500000,
             // 偷懒，直接使用 2gwei
             gasPrice: ethers.utils.parseUnits("2", "gwei")
@@ -416,6 +414,8 @@ App = {
             console.log(error);
             alert('Error \u2014 ' + error.message);
         });
+
+        return nonce;
     }
 
     /*

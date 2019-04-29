@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8929146b-665a-4f68-8f03-e66078c1a057" name="Default Changelist" comment="">
+    <list default="true" id="8929146b-665a-4f68-8f03-e66078c1a057" name="Default Changelist" comment="last">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
     </list>
@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="290" column="17" selection-start-line="290" selection-start-column="17" selection-end-line="290" selection-end-column="17" />
+            <state relative-caret-position="251">
+              <caret line="403" column="63" lean-forward="true" selection-start-line="403" selection-start-column="63" selection-end-line="403" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1704">
-              <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+            <state relative-caret-position="1200">
+              <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -106,9 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EthAmount</find>
-      <find>CheckAddress</find>
-      <find>EthBalance</find>
       <find>TokenBalance</find>
       <find>hidden</find>
       <find>$</find>
@@ -136,6 +133,9 @@
       <find>creat</find>
       <find>createWallet</find>
       <find>http</find>
+      <find>实时</find>
+      <find>userName</find>
+      <find>nonce</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
@@ -151,6 +151,8 @@
       <replace>偷懒，直接使用 2gwei</replace>
       <replace>App.refreshUI();</replace>
       <replace>setupWallet</replace>
+      <replace>定制</replace>
+      <replace>userId</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -186,9 +188,9 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="950" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -296,7 +298,9 @@
       <workItem from="1556160347262" duration="22100000" />
       <workItem from="1556242079995" duration="7315000" />
       <workItem from="1556328545928" duration="6647000" />
-      <workItem from="1556414936971" duration="5584000" />
+      <workItem from="1556414936971" duration="9052000" />
+      <workItem from="1556498571338" duration="1450000" />
+      <workItem from="1556515269196" duration="6338000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <created>1555380028413</created>
@@ -424,11 +428,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556441185202</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="last">
+      <created>1556441212476</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1556441212476</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212336000" />
+    <option name="totallyTimeSpent" value="223592000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -440,11 +451,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5339943" visible="true" weight="0.16182299" />
-      <window_info id="Structure" order="1" sideWeight="0.46600565" side_tool="true" visible="true" weight="0.16182299" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5311615" visible="true" weight="0.18692206" />
+      <window_info id="Structure" order="1" sideWeight="0.4688385" side_tool="true" visible="true" weight="0.18692206" />
       <window_info id="npm" order="2" sideWeight="0.68008476" side_tool="true" weight="0.15587847" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -619,6 +630,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="403" column="63" lean-forward="true" selection-start-line="403" selection-start-column="63" selection-end-line="403" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6336">
@@ -662,23 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33336">
           <caret line="1389" column="49" selection-start-line="1389" selection-start-column="49" selection-end-line="1389" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1704">
-          <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="290" column="17" selection-start-line="290" selection-start-column="17" selection-end-line="290" selection-end-column="17" />
         </state>
       </provider>
     </entry>
