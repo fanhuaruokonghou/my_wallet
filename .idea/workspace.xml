@@ -4,6 +4,7 @@
     <list default="true" id="8929146b-665a-4f68-8f03-e66078c1a057" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,20 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="714" lean-forward="true" selection-start-line="714" selection-end-line="714" />
+            <state relative-caret-position="73">
+              <caret line="496" column="14" lean-forward="true" selection-start-line="496" selection-start-column="14" selection-end-line="496" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="236" column="6" lean-forward="true" selection-start-line="215" selection-start-column="4" selection-end-line="236" selection-end-column="6" />
+            <state relative-caret-position="272">
+              <caret line="491" column="61" lean-forward="true" selection-start-line="491" selection-start-column="61" selection-end-line="491" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -49,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/transaction.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="30" column="62" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="62" />
+            <state relative-caret-position="161">
+              <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -58,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/token.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2280">
-              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="98">
+              <caret line="37" column="48" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -116,8 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>App.activeWal</find>
-      <find>provider</find>
       <find>App.activeWallet</find>
       <find>then</find>
       <find>sync</find>
@@ -145,7 +144,9 @@
       <find>create</find>
       <find>HD</find>
       <find>recha</find>
+      <find>506</find>
       <find>setup</find>
+      <find>balanceOf</find>
     </findStrings>
     <replaceStrings>
       <replace>refreshUI</replace>
@@ -222,6 +223,11 @@
             <path>
               <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
               <item name="my_wallet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my_wallet" type="462c0819:PsiDirectoryNode" />
+              <item name="contracts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
@@ -329,7 +335,7 @@
       <workItem from="1556933453495" duration="8045000" />
       <workItem from="1557023866740" duration="2311000" />
       <workItem from="1557105547504" duration="30236000" />
-      <workItem from="1557191976785" duration="5506000" />
+      <workItem from="1557191976785" duration="9210000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <created>1555380028413</created>
@@ -499,11 +505,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557194218104</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="last">
+      <created>1557197540265</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1557197540265</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337757000" />
+    <option name="totallyTimeSpent" value="341461000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,10 +528,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.84375" visible="true" weight="0.21598415" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84375" visible="true" weight="0.21598415" />
       <window_info id="Structure" order="1" sideWeight="0.15625" side_tool="true" visible="true" weight="0.21598415" />
       <window_info id="npm" order="2" sideWeight="0.68008476" side_tool="true" weight="0.15587847" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -531,7 +544,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4980185" visible="true" weight="0.09348442" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5019815" side_tool="true" visible="true" weight="0.09348442" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019815" side_tool="true" weight="0.09348442" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4966975" weight="0.23229462" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.3286119" />
@@ -744,20 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/transaction.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="30" column="62" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/token.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
-          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -800,17 +799,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
+    <entry file="uml://JavaScript-modules-diagram/G:/my_wallet/src/app.js">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/app.js</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/src/app.js#bip32#2650;G:/my_wallet/src/app.js#bip39#2608;G:/my_wallet/src/app.js#crypto#10167;</node>
+            <node x="" y="">bip32</node>
+            <node x="" y="">bip39</node>
+            <node x="" y="">crypto</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="97.5" y="141.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jquery-3.3.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="236" column="6" lean-forward="true" selection-start-line="215" selection-start-column="4" selection-end-line="236" selection-end-column="6" />
+        <state relative-caret-position="24">
+          <caret line="1" column="77949" selection-start-line="1" selection-start-column="77949" selection-end-line="1" selection-end-column="77949" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="714" lean-forward="true" selection-start-line="714" selection-end-line="714" />
+        <state relative-caret-position="73">
+          <caret line="496" column="14" lean-forward="true" selection-start-line="496" selection-start-column="14" selection-end-line="496" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/transaction.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/token.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="37" column="48" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="491" column="61" lean-forward="true" selection-start-line="491" selection-start-column="61" selection-end-line="491" selection-end-column="61" />
         </state>
       </provider>
     </entry>

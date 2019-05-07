@@ -5,23 +5,11 @@ App = {
     contractWithSigner: null,
 
     setupWallet: function (wallet) {  //初始化钱包
-        //建立一个provider对象连接到以太坊的节点
+
         App.provider = new ethers.providers.JsonRpcProvider("http://47.102.203.221:8545");
         //  将钱包连接到节点
         App.activeWallet = wallet.connect(App.provider);
-        let contractSet = new Promise((resolve, reject) => {
-            try {
-                App.initToken();  //初始化代币合约对象App.contract
-                resolve("ok");
-            }catch (e) {
-                reject(e);
-            }
-        });
-        // 关联一个有过签名钱包对象
-        contractSet.then((h)=>{
-            console.log(h);
-            App.contractWithSigner = App.contract.connect(App.activeWallet);
-        })
+        App.initToken();  //初始化代币合约对象App.contract
 
     },
 
@@ -194,9 +182,19 @@ App = {
             // 智能合约地址
             const address = data.networks["1001"].address;
             console.log(address);
-
-            // 初始化智能合约对象
-            App.contract = new ethers.Contract(address, data.abi, App.provider);
+            // 关联一个有过签名钱包对象
+            let createContract = new Promise((resolve, reject) => {
+                try {
+                    // 初始化智能合约对象
+                    App.contract = new ethers.Contract(address, data.abi, App.provider);
+                    resolve(App.contract);
+                }catch (e) {
+                    reject(e);
+                }
+            });
+            createContract.then((contract) => {
+                App.contractWithSigner = contract.connect(App.activeWallet);
+            });
             console.log(App.contract);
             console.log("contract:" + App.contract);
         });
