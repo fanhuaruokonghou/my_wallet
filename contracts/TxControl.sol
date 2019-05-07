@@ -73,7 +73,7 @@ contract TxControl is transaction {
     }
 
 
-    function buyRealTimeData(uint256 nonce, string memory _publicKeyCheck, string memory _ipOrEigenvalues, uint256 _value, uint32 _accountsNumber, uint8 _buyerGrade, uint64 _duration, uint256 _buyerId) public returns(uint256, uint256){
+    function buyRealTimeData(string memory _publicKeyCheck, string memory _ipOrEigenvalues, uint256 _value, uint32 _accountsNumber, uint8 _buyerGrade, uint64 _duration, uint256 _buyerId) public returns(uint256){
         txSaveRealTime memory txRealTimeData = txSaveRealTime({
             buyer: msg.sender,
             publicKeyCheck: _publicKeyCheck,
@@ -88,7 +88,7 @@ contract TxControl is transaction {
         txRealTimeList.push(txRealTimeData);
         beforeRealTimeTransaction(_accountsNumber,_value, msg.sender );
         emit addRealTimeTx(_buyerId, _publicKeyCheck, _ipOrEigenvalues, _duration);
-        return (txRealTimeList.length - 1, nonce);
+        return txRealTimeList.length - 1;
     }
 
     function setAddress(address[] memory addressList) public {

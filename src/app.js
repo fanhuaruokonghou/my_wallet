@@ -9,10 +9,20 @@ App = {
         App.provider = new ethers.providers.JsonRpcProvider("http://47.102.203.221:8545");
         //  将钱包连接到节点
         App.activeWallet = wallet.connect(App.provider);
+        let contractSet = new Promise((resolve, reject) => {
+            try {
+                App.initToken();  //初始化代币合约对象App.contract
+                resolve("ok");
+            }catch (e) {
+                reject(e);
+            }
+        });
         // 关联一个有过签名钱包对象
-        App.contractWithSigner = App.contract.connect(App.activeWallet);
+        contractSet.then((h)=>{
+            console.log(h);
+            App.contractWithSigner = App.contract.connect(App.activeWallet);
+        })
 
-        App.initToken();  //初始化代币合约对象App.contract
     },
 
     //进度条
@@ -206,11 +216,12 @@ App = {
     //转移以太币
     //targetAddress  目标地址
     //ethAmount  金额
-    setupSendEther: function(targetAddress, ethAmount) {
+    //uint 货币单位
+    setupSendEther: function(targetAddress, ethAmount, uint) {
         if(App.checkAddress(targetAddress)){
             App.activeWallet.sendTransaction({
                 to: ethers.utils.getAddress(targetAddress),
-                value: ethers.utils.parseEther(ethAmount),
+                value: ethers.utils.parseUnits(ethAmount, uint)
             }).then(function(tx) {
                 console.log(tx);
                 alert('Success!');
@@ -254,12 +265,12 @@ App = {
 
     //代币充值
     //ethAmount  充值金额
-    rechargeToken: function (ethAmount) {
+    rechargeToken: function (ethAmount, uint) {
         App.contractWithSigner.recharge({
             gasLimit: 500000,
             // 偷懒，直接使用 2gwei
             gasPrice: ethers.utils.parseUnits("2", "gwei"),
-            value: ethers.utils.parseEther(ethAmount)
+            value: ethers.utils.parseUnits(ethAmount, uint)
         });
         
     },
@@ -290,7 +301,7 @@ App = {
 
 
     //密钥协商  可以用于发布交易时，也可以用于用户解密时
-    ECDH: function (userId, nonce, password, method) {
+    ECDH: function (userId, nonce, password, methodOrPublicKey) {
         const crypto = require('crypto');
         const alice = crypto.createECDH('secp256k1');
         let getPrivate = new Promise(function (resolve, reject) {
@@ -302,19 +313,19 @@ App = {
             }
         });
         getPrivate.then((privateKey) =>{
+            if (privateKey.substring(0, 2) === '0x') { privateKey = privateKey.substring(2, 64); }
             alice.setPrivateKey(privateKey, 'hex');
             let publicKey = alice.getPublicKey('hex');
-            if(method === 'tx'){
+            if(methodOrPublicKey === 'tx'){
                 return publicKey;
             }else {
-                const alice_secret = alice.computeSecret(publicKey, null, 'hex');
+                const alice_secret = alice.computeSecret(methodOrPublicKey, 'hex', 'hex');
+                return alice_secret;
             }
 
         }).catch((err) =>{
             console.log(err);
         });
-        // const alice_secret = alice.computeSecret(bob.getPublicKey(), null, 'hex');
-        // const bob_secret = bob.computeSecret(alice.getPublicKey(), null, 'hex');
     },
 
     //生成确定性密钥
@@ -388,38 +399,42 @@ App = {
     //IP或者特征值
     //交易代币总额
     purchaseRealTimeData: function (userId, password, ipOrEigenvalues, value, accountsNumber, buyerGrade, duration) {
-        let nonce = null;
+        let result = new Array(2);
         let getNonce = new Promise((resolve, reject) => {
             try {
                 App.activeWallet.getTransactionCount('pending').then(function(transactionCount) {
-                    nonce = transactionCount;  //账户交易序号nonce
-                    resolve(nonce);
+                    result[0] = transactionCount;  //账户交易序号nonce
+                    resolve(transactionCount);
                 });
             }catch (e) {
                 reject(e);
             }
         });
-        let publicKeyCheck = null;
-        getNonce.then(() => {
-            publicKeyCheck = App.ECDH(userId, nonce, password);
+        getNonce.then((nonce) => {
+            return new Promise((resolve, reject) => {
+                try {
+                    resolve(App.ECDH(userId, nonce, password, 'tx'));
+                }catch (e) {
+                    reject(e);
+                }
+            }) ;
+        }).then((publicKeyCheck) => {
+                result[1] = App.contractWithSigner.buyRealTimeData(publicKeyCheck, ipOrEigenvalues, value, accountsNumber, buyerGrade, duration, userId, {
+                    gasLimit: 500000,
+                    // 偷懒，直接使用 2gwei
+                    gasPrice: ethers.utils.parseUnits("2", "gwei")
+                }).then(function(tx) {
+                    console.log(tx);
+                    alert('Success!');
+                }, function(error) {
+                    console.log(error);
+                    alert('Error \u2014 ' + error.message);
+                });
         });
-        setTimeout(
-            App.contractWithSigner.buyRealTimeData(nonce, publicKeyCheck, ipOrEigenvalues, value, accountsNumber, buyerGrade, duration, userId, {
-                gasLimit: 500000,
-                // 偷懒，直接使用 2gwei
-                gasPrice: ethers.utils.parseUnits("2", "gwei")
-            }).then(function(tx) {
-                console.log(tx);
-                alert('Success!');
-            }, function(error) {
-                console.log(error);
-                alert('Error \u2014 ' + error.message);
-            }), 0
-    );
-        return nonce;
+        return result;
     },
 
-    //设设置定制数据的卖家地址
+    //设置定制数据的卖家地址
     setSellerAddress: function (addressList) {
         App.contractWithSigner.setAddress(addressList, {
             gasLimit: 500000,
