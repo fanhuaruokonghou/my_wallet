@@ -9,9 +9,20 @@ App = {
         App.provider = new ethers.providers.JsonRpcProvider("http://47.102.203.221:8545");
         //  将钱包连接到节点
         App.activeWallet = wallet.connect(App.provider);
+        let contractSet = new Promise((resolve, reject) => {
+            try {
+                App.initToken();  //初始化代币合约对象App.contract
+                resolve("ok");
+            }catch (e) {
+                reject(e);
+            }
+        });
         // 关联一个有过签名钱包对象
-        App.contractWithSigner = App.contract.connect(App.activeWallet);
-        App.initToken();  //初始化代币合约对象App.contract
+        contractSet.then((h)=>{
+            console.log(h);
+            App.contractWithSigner = App.contract.connect(App.activeWallet);
+        })
+
     },
 
     //进度条
