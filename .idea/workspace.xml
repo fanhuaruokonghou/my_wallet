@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8929146b-665a-4f68-8f03-e66078c1a057" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/TxControl.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/TxControl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/owned.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/owned.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/pausable.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/pausable.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/token.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/token.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/tokenRecipient.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/tokenRecipient.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/transaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/transaction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/TxControl.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/TxControl.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/truffle-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/truffle-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8736">
-              <caret line="364" column="62" selection-start-line="364" selection-start-column="62" selection-end-line="364" selection-end-column="62" />
+            <state relative-caret-position="408">
+              <caret line="714" lean-forward="true" selection-start-line="714" selection-end-line="714" />
             </state>
           </provider>
         </entry>
@@ -36,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="481">
+              <caret line="236" column="6" lean-forward="true" selection-start-line="215" selection-start-column="4" selection-end-line="236" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -75,17 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/TxControl.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="75" column="209" selection-start-line="75" selection-start-column="209" selection-end-line="75" selection-end-column="209" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/truffle-config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+            <state relative-caret-position="366">
+              <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -133,10 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>userName</find>
-      <find>文件</find>
-      <find>var</find>
-      <find>wallet</find>
       <find>App.activeWal</find>
       <find>provider</find>
       <find>App.activeWallet</find>
@@ -163,6 +142,10 @@
       <find>ecdh</find>
       <find>alice</find>
       <find>Allowance</find>
+      <find>create</find>
+      <find>HD</find>
+      <find>recha</find>
+      <find>setup</find>
     </findStrings>
     <replaceStrings>
       <replace>refreshUI</replace>
@@ -208,11 +191,11 @@
         <option value="$PROJECT_DIR$/src/1.html" />
         <option value="$PROJECT_DIR$/src/h.txt" />
         <option value="$PROJECT_DIR$/src/test.html" />
-        <option value="$PROJECT_DIR$/src/Admin.js" />
         <option value="$PROJECT_DIR$/src/test.js" />
-        <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/contracts/TxControl.sol" />
         <option value="$PROJECT_DIR$/truffle-config.js" />
+        <option value="$PROJECT_DIR$/src/app.js" />
+        <option value="$PROJECT_DIR$/src/Admin.js" />
       </list>
     </option>
   </component>
@@ -239,22 +222,6 @@
             <path>
               <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
               <item name="my_wallet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_wallet" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_wallet" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_wallet" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="my_wallet" type="b2602c69:ProjectViewProjectNode" />
@@ -362,7 +329,7 @@
       <workItem from="1556933453495" duration="8045000" />
       <workItem from="1557023866740" duration="2311000" />
       <workItem from="1557105547504" duration="30236000" />
-      <workItem from="1557191976785" duration="659000" />
+      <workItem from="1557191976785" duration="5506000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <created>1555380028413</created>
@@ -518,11 +485,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556945862016</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="last">
+      <created>1557192783847</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1557192783847</updated>
+    </task>
+    <task id="LOCAL-00024" summary="last">
+      <created>1557194218104</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1557194218104</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332910000" />
+    <option name="totallyTimeSpent" value="337757000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -537,8 +518,8 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84335154" visible="true" weight="0.15587847" />
-      <window_info id="Structure" order="1" sideWeight="0.15664846" side_tool="true" visible="true" weight="0.15587847" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.84375" visible="true" weight="0.21598415" />
+      <window_info id="Structure" order="1" sideWeight="0.15625" side_tool="true" visible="true" weight="0.21598415" />
       <window_info id="npm" order="2" sideWeight="0.68008476" side_tool="true" weight="0.15587847" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -549,9 +530,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.22804533" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5033025" side_tool="true" weight="0.48016998" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4966975" visible="true" weight="0.22237961" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4980185" visible="true" weight="0.09348442" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5019815" side_tool="true" visible="true" weight="0.09348442" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4966975" weight="0.23229462" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -753,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8736">
-          <caret line="364" column="62" selection-start-line="364" selection-start-column="62" selection-end-line="364" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3552">
@@ -809,24 +783,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
+    <entry file="file://$PROJECT_DIR$/migrations/2_initial_migration.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truffle-config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        <state relative-caret-position="119">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/TxControl.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="75" column="209" selection-start-line="75" selection-start-column="209" selection-end-line="75" selection-end-column="209" />
+        <state relative-caret-position="366">
+          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truffle-config.js">
+    <entry file="file://$PROJECT_DIR$/src/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        <state relative-caret-position="481">
+          <caret line="236" column="6" lean-forward="true" selection-start-line="215" selection-start-column="4" selection-end-line="236" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="714" lean-forward="true" selection-start-line="714" selection-end-line="714" />
         </state>
       </provider>
     </entry>

@@ -291,14 +291,14 @@ App = {
 
     //代币充值
     //ethAmount  充值金额
-    rechargeToken: function (ethAmount) {
+    rechargeToken: function (ethAmount, uint) {
         App.contractWithSigner.recharge({
             gasLimit: 500000,
             // 偷懒，直接使用 2gwei
             gasPrice: ethers.utils.parseUnits("2", "gwei"),
-            value: ethers.utils.parseEther(ethAmount)
+            value: ethers.utils.parseUnits(ethAmount, uint)
         });
-        App.refreshUI();
+
     },
 
     //提现
@@ -384,11 +384,12 @@ App = {
     //转移以太币
     //targetAddress  目标地址
     //ethAmount  金额
-    setupSendEther: function(targetAddress, ethAmount) {
+    //uint 货币单位
+    setupSendEther: function(targetAddress, ethAmount, uint) {
         if(App.checkAddress(targetAddress)){
             App.activeWallet.sendTransaction({
                 to: ethers.utils.getAddress(targetAddress),
-                value: ethers.utils.parseEther(ethAmount),
+                value: ethers.utils.parseUnits(ethAmount, uint)
             }).then(function(tx) {
                 console.log(tx);
                 alert('Success!');
@@ -613,7 +614,7 @@ App = {
     },
 
     //查询addressTarget账户的贡献值
-    // asBuyerOrSeller  可取1或2，其中1为查看自己作为买家贡献值，2为查看自己作为卖家贡献值
+    // asBuyerOrSeller  可取1或2，其中1为查看账户作为买家贡献值，2为查看账户作为卖家贡献值
     inquireContribution: function (addressTarget, asBuyerOrSeller) {
         let result = App.contractWithSigner.contributionvalue(addressTarget, asBuyerOrSeller).then(function(tx) {
             console.log(tx);
@@ -625,7 +626,7 @@ App = {
         return result;
     },
 
-    //用户查询自己作为买家或买家的交易金额
+    //用户查询账户作为买家或买家的交易金额
     inquireTotalTxmoney: function (addressTarget, asBuyerOrSeller) {
         let result = App.contractWithSigner.TotalbuyerpaymenORsellercollectionOnlyOwner(addressTarget, asBuyerOrSeller).then(function(tx) {
             console.log(tx);
