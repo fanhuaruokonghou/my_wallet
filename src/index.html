@@ -1,31 +1,35 @@
 <html>
     <head>
-        <title>以太坊去中心化Web钱包</title>
+        <title>前端测试</title>
         <link rel="stylesheet" type="text/css" href="./style.css">
     </head>
     <body>
-        <div class="centerer" id="screen-login">
-            <div class="centered">
-                <h1>以太坊钱包创建或导入</h1>
-                <hr />
-                <table>
-                    <tr>
-                        <th>导入:</th>
-                        <td><div id="login" class="submit" >导入</div></td>
-                    </tr>
-                    <tr>
-                        <th>创建:</th>
-                        <td><div id="create" class="submit">新建</div></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+<!--        <div class="centerer" id="screen-login">-->
+<!--            <div class="centered">-->
+<!--                <h1>以太坊钱包创建或导入</h1>-->
+<!--                <hr />-->
+<!--                <table>-->
+<!--                    <tr>-->
+<!--                        <th>导入:</th>-->
+<!--                        <td><div id="login" class="submit" >导入</div></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <th>创建:</th>-->
+<!--                        <td><div id="create" class="submit">新建</div></td>-->
+<!--                    </tr>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="centerer " id="screen-account">
             <div class="centered">
                 <h1>以太坊钱包 - 账号创建、导入</h1>
                 <hr />
                 <h2>加载账号Keystore文件</h2>
                 <table>
+                    <tr>
+                        <th>钱包名字:</th>
+                        <td><input type="name" placeholder="(name)" id="select-wallet-name" /></td>
+                    </tr>
                     <tr>
                         <th>Keystore:</th>
                         <td><div class="file" id="select-wallet-drop">把Json文件拖动到这里</div><input type="file" id="select-wallet-file" /></td>
@@ -37,7 +41,7 @@
                     <tr>
                         <td> </td>
                         <td>
-                            <div id="select-submit-wallet" class="submit disable">解密</div>
+                            <div id="select-submit-wallet" class="submit" onclick="App.initLoadJson()">解密</div>
                         </td>
                     </tr>
                 </table>
@@ -79,10 +83,6 @@
                 </table>
 
                 <hr />
-                <h3>声明:</h3>
-                <p>
-                    这仅仅是一个钱包Demo，还有很多细节仍需完善， <b>使用请自担风险.</b>
-                </p>
             </div>
         </div>
         <div class="centerer " id="screen-loading">
@@ -104,10 +104,6 @@
                 </table>
 
                 <hr />
-                <h3>声明:</h3>
-                <p>
-                    这仅仅是一个钱包Demo，还有很多细节仍需完善， <b>使用请自担风险.</b>
-                </p>
             </div>
         </div>
         <div class="centerer " id="screen-wallet">
@@ -246,11 +242,6 @@
                 <div id="wallet-activity" class="activity"></div>
 
                 <hr />
-
-                <h3>声明:</h3>
-                <p>
-                    这仅仅是一个钱包Demo，还有很多细节仍需完善， <b>使用请自担风险.</b>
-                </p>
             </div>
         </div>
         <div class="centerer " id="screen-create">

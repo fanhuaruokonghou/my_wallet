@@ -13,11 +13,6 @@ App = {
 
     },
 
-    //进度条
-    updateLoading: function(progress) {
-      console.log(progress);
-      $("#loading-status").val( parseInt(progress * 100) + '%');
-    },
 
     //通过keystore文件导入密钥
     //privateName  私钥钱包名字
@@ -291,14 +286,14 @@ App = {
         let wallet = new ethers.Wallet(privateKey);
         wallet.encrypt(password).then(function(json) {
             storage.setItem(userId + 'priv', json);
-            console.log(storage.getItem(privateName));
         });
         storage.setItem(userId + 'ECDH', mnemonic);
     },
 
 
 
-    //密钥协商  可以用于发布交易时，也可以用于用户解密时
+    //密钥协商  用于用户解密时
+    //nonce 表示此次交易使用的
     ECDH: function (userId, nonce, password, methodOrPublicKey) {
         const crypto = require('crypto');
         const alice = crypto.createECDH('secp256k1');
@@ -310,7 +305,7 @@ App = {
                 reject(e);
             }
         });
-        getPrivate.then((privateKey) =>{
+        getPrivate.then((privateKey) => {
             if (privateKey.substring(0, 2) === '0x') { privateKey = privateKey.substring(2, 64); }
             alice.setPrivateKey(privateKey, 'hex');
             let publicKey = alice.getPublicKey('hex');
@@ -335,6 +330,7 @@ App = {
         let path = "m/44'/60'/0'/0/";
         let storage = window.localStorage;
         let json = storage.getItem(userId + 'priv');
+        let mnemonic = storage.getItem(userId + 'ECDH');
         if (ethers.utils.getJsonWalletAddress(json)) {
             ethers.Wallet.fromEncryptedJson(json, password).then(function(wallet) {
                 privateKey = wallet.privateKey;
@@ -396,6 +392,7 @@ App = {
     //password  买家输入的密钥
     //IP或者特征值
     //交易代币总额
+    //
     purchaseRealTimeData: function (userId, password, ipOrEigenvalues, value, accountsNumber, buyerGrade, duration) {
         let result = new Array(2);
         let getNonce = new Promise((resolve, reject) => {
@@ -417,7 +414,7 @@ App = {
                 }
             }) ;
         }).then((publicKeyCheck) => {
-                result[1] = App.contractWithSigner.buyRealTimeData(publicKeyCheck, ipOrEigenvalues, value, accountsNumber, buyerGrade, duration, userId, {
+                result[1] = App.contractWithSigner.buyRealTimeData(result[0], publicKeyCheck, ipOrEigenvalues, value, accountsNumber, buyerGrade, duration, userId, {
                     gasLimit: 500000,
                     // 偷懒，直接使用 2gwei
                     gasPrice: ethers.utils.parseUnits("2", "gwei")
@@ -579,3 +576,5 @@ App = {
         return result;
     },
 }
+
+
